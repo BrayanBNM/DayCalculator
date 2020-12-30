@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lab Test</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <script type="text/javascript">
+
+    function checkDate() {
+
+      var valueDate = new Date(myForm.inputDate.value);
+      var valueNumber = parseInt(myForm.inputNumber.value);
+      var valueHours = valueDate.getHours()
+
+      valueDate.setHours(valueHours + (24 * valueNumber));
+
+      var dd = valueDate.getDate()
+      var mm = valueDate.getMonth() + 1
+      var yyyy = valueDate.getFullYear()
+
+      var final = dd + ' - ' + mm + ' - ' + yyyy;
+
+      myForm.outputDate.value = final;
+
+    }
+
+
+  </script>
+
+</head>
+
+<body>
+
+  <div style="margin-top: 100px;">
+    <form name="myForm">
+      <table class="table table-hover table-dark">
+        <!-- align="center" border="1" cellpadding="10"cellspacing="5" -->
+
+        <tr class="text-center">
+          <th colspan="2">
+            <h2>Day Calculator</h2>
+          </th>
+        </tr>
+
+        <tr class="text-center">
+          <td>
+            <h2>Select the Date:</h2>
+          </td>
+          <td>
+            <input type="date" name="inputDate" value="">
+          </td>
+        </tr>
+
+        <tr class="text-center">
+          <td>
+            <h2>Enter the Number:</h2>
+          </td>
+          <td>
+            <input type="text" name="inputNumber" value="">
+          </td>
+        </tr>
+
+        <tr class="text-center">
+          <td colspan="2">
+            <h2><button class="btn btn-primary btn-lg" type="button" name="button" onclick="checkDate()">Calculate</button>
+            </h2>
+
+          </td>
+        </tr>
+
+        <tr class="text-center">
+          <td>
+            <h2>New Date:</h2>
+          </td>
+          <td>
+            <input type="text" name="outputDate" value="">
+          </td>
+        </tr>
+
+      </table>
+
+
+    </form>
+  </div>
+
+</body>
+
+</html>
